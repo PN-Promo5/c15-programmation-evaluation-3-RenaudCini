@@ -8,7 +8,7 @@ let cinema_film = [
   ["WHAT YOU GONNA DO WHEN THE WORLD'S ON FIRE ?", "Roberto Minervini", "Etats-Unis/Italie", 2018, "2h30", "vostfr"],
   ["GRASS", "Hong Sang-Soo", "Corée du Sud", 2018, "1h06", "vostfr"]
 ]
-
+poster()
 
 /*Exercice1*/
 function poster() {
@@ -39,7 +39,7 @@ function poster() {
 
   button.addEventListener("click", function() {
     div_poster.hidden = "true"
-    generate_table_html(cinema_film)
+    let r = generate_table_html(cinema_film)
   }, false);
 
 
