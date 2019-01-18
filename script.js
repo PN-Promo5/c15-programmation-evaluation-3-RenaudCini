@@ -40,9 +40,8 @@ function poster() {
   button.addEventListener("click", function() {
     div_poster.hidden = "true"
     let r = generate_table_html(cinema_film)
+      document.body.appendChild(r);
   }, false);
-
-
 
 }
 
@@ -56,15 +55,15 @@ paramètre doit correspondre à l’en-tête de la table HTML retournée.*/
 
 function generate_table_html(array) {
 
-/*creation table*/
+  /*creation table*/
   let table = document.createElement("table")
 
-  document.body.appendChild(table);
+
   let tr = document.createElement("tr");
   let i = 0;
 
 
-/*creation header*/
+  /*creation header*/
   let on_your_mind = ["Titre du film", "Réalisateur", "Nationalité", "Année", "Durée", "Version"]
   let thead = document.createElement("thead")
   table.appendChild(thead)
@@ -78,7 +77,7 @@ function generate_table_html(array) {
     i++;
   }
 
-/*creation tbody*/
+  /*creation tbody*/
   let tbody = document.createElement("tbody")
   table.appendChild(tbody)
   tr = document.createElement("tr");
@@ -95,7 +94,7 @@ function generate_table_html(array) {
     tr = document.createElement("tr");
     tbody.appendChild(tr)
 
-/*data entry*/
+    /*data entry*/
     while (j < current_element.length) {
       td_textContent = current_element[j]
       td = document.createElement("td")
@@ -121,15 +120,15 @@ paramètre doit correspondre à l’en-tête de la table HTML retournée.*/
 
 let substance = [
   ["SUBSTANCES", "Température de fusion ou solidification en °C", "Température d’ébullition en °C"],
-  ["acide acétique",17,118],
-  ["acide nitrique",-41,86],
-  ["acide sulfurique",10,290],
-  ["alcool éthylique",-114,78],
-  ["aluminium", 660,2450]
+  ["acide acétique", 17, 118],
+  ["acide nitrique", -41, 86],
+  ["acide sulfurique", 10, 290],
+  ["alcool éthylique", -114, 78],
+  ["aluminium", 660, 2450]
 ]
 /*EXERCICE 2 .2 */
 
-calcul_temperature(substance, 300)
+calcul_temperature(substance, 100)
 
 function calcul_temperature(array, temperature) {
   let current_element
@@ -142,9 +141,9 @@ function calcul_temperature(array, temperature) {
     j = 0
     while (j < current_element.length) {
 
-      if (i > 0 && j == 2 && current_element[2]<temperature) {
-          temperature_low = current_element[0]
-
+      if (i > 0 && j == 2 && current_element[2] < temperature) {
+        temperature_low = current_element[0]
+        console.log(temperature_low);
       }
       j++;
     }
